@@ -1,1 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisãoMais - Portal de Tecnologia Assistiva</title>
+  <style>
+    /* Estilos Gerais (Foco em Alto Contraste e Legibilidade) */
+    :root {
+      --bg-color: #f4f4f9;
+      --text-color: #1a1a1a;
+      --primary-color: #004488;
+      --card-bg: #ffffff;
+      --font-scale: 1rem;
+    }
 
+    /* Tema de Alto Contraste (Ativado via JS) */
+    body.high-contrast {
+      --bg-color: #000000;
+      --text-color: #ffff00; /* Amarelo no preto para máxima visibilidade */
+      --primary-color: #00ffff;
+      --card-bg: #121212;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: var(--font-scale);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Barra de Acessibilidade Superior */
+    .accessibility-bar {
+      background: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .accessibility-bar button {
+      background: #ffffff;
+      color: #000;
+      border: 2px solid #000;
+      padding: 8px 12px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .accessibility-bar button:focus,
+    a:focus,
+    button:focus {
+      outline: 4px solid #ff9900 !important;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 2px solid var(--primary-color);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-top: 2px solid var(--primary-color);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="accessibility-bar" role="region" aria-label="Ferramentas de Acessibilidade">
+    <button onclick="toggleContrast()" aria-label="Alternar para modo Alto Contraste">Alto Contraste</button>
+    <button onclick="changeFontSize(1)" aria-label="Aumentar tamanho do texto">A+ Aumentar Fonte</button>
+    <button onclick="changeFontSize(-1)" aria-label="Diminuir tamanho do texto">A- Diminuir Fonte</button>
+    <button onclick="readPage()" aria-label="Ouvir texto principal da página">🔊 Ler Página</button>
+  </div>
+
+  <header role="banner">
+    <h1>VisãoMais</h1>
+    <p>Tecnologias e recursos para inclusão de pessoas com deficiência visual.</p>
+  </header>
+
+  <main id="main-content" role="main">
+    
+    <section aria-labelledby="sec-produtos">
+      <h2 id="sec-produtos">Produtos e Recursos Assistivos</h2>
+
+      <article class="card">
+        <h3>1. Leitores de Tela (Software)</h3>
+        <p>Softwares que convertem texto em síntese de voz ou código Braille. Permitem a navegação completa pelo computador ou celular.</p>
+        <p><strong>Exemplos:</strong> NVDA (Gratuito/Windows), TalkBack (Android) e VoiceOver (iOS/macOS).</p>
+      </article>
+
+      <article class="card">
+        <h3>2. Linhas Braille Digitais (Hardware)</h3>
+        <p>Dispositivos físicos conectados a computadores ou celulares que traduzem em tempo real o texto da tela para caracteres Braille tátil.</p>
+      </article>
+
+      <article class="card">
+        <h3>3. Óculos Inteligentes e Bengalas Tecnológicas</h3>
+        <p>Equipamentos equipados com sensores ultrassônicos ou câmeras com inteligência artificial para identificar obstáculos e ler impressos em voz alta.</p>
+      </article>
+    </section>
+
+    <section aria-labelledby="sec-dicas">
+      <h2 id="sec-dicas">Boas Práticas de Navegação Acessível</h2>
+      <ul>
+        <li>Utilize a tecla <strong>Tab</strong> do seu teclado para navegar entre os elementos desta página.</li>
+        <li>Utilize os botões da barra superior para ajustar a leitura conforme sua necessidade.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2026 VisãoMais - Projeto de Acessibilidade Digital hospedado via GitHub Pages.</p>
+  </footer>
+
+  <script>
+    // Alternar Contraste
+    function toggleContrast() {
+      document.body.classList.toggle('high-contrast');
+    }
+
+    // Aumentar / Diminuir Fonte
+    let currentScale = 16; // tamanho base em px
+    function changeFontSize(delta) {
+      currentScale += delta * 2;
+      if (currentScale < 12) currentScale = 12;
+      if (currentScale > 28) currentScale = 28;
+      document.documentElement.style.fontSize = currentScale + 'px';
+    }
+
+    // Leitor de Voz Nativo (Web Speech API)
+    function readPage() {
+      if ('speechSynthesis' in window) {
+        // Interrompe falas anteriores
+        window.speechSynthesis.cancel();
+
+        const textToRead = document.getElementById('main-content').innerText;
+        const utterance = new SpeechSynthesisUtterance(textToRead);
+        utterance.lang = 'pt-BR';
+        utterance.rate = 1.0;
+
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert("Desculpe, seu navegador não suporta a síntese de voz.");
+      }
+    }
+  </script>
+</body>
+</html>
