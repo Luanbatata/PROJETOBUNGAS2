@@ -3,40 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VisionPlus - Assistive Technology Portal</title>
+  <title>VisionPlus - Accessibility Portal</title>
   <style>
-    /* General Styles (Focused on High Contrast and Readability) */
     :root {
       --bg-color: #f4f4f9;
       --text-color: #1a1a1a;
       --primary-color: #004488;
       --card-bg: #ffffff;
-      --font-scale: 1rem;
     }
 
-    /* High Contrast Theme (Activated via JS) */
+    /* High Contrast Mode */
     body.high-contrast {
       --bg-color: #000000;
-      --text-color: #ffff00; /* Yellow on black for maximum contrast */
+      --text-color: #ffff00;
       --primary-color: #00ffff;
       --card-bg: #121212;
+    }
+
+    html {
+      font-size: 16px;
     }
 
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: var(--font-scale);
+      font-family: Arial, sans-serif;
       line-height: 1.6;
       margin: 0;
       padding: 0;
     }
 
-    /* Accessibility Top Bar */
     .accessibility-bar {
-      background: #333;
-      color: white;
-      padding: 10px;
+      background: #222222;
+      padding: 12px;
       text-align: center;
       display: flex;
       justify-content: center;
@@ -46,30 +45,29 @@
 
     .accessibility-bar button {
       background: #ffffff;
-      color: #000;
-      border: 2px solid #000;
-      padding: 8px 12px;
+      color: #000000;
+      border: 2px solid #000000;
+      padding: 8px 14px;
       font-weight: bold;
+      font-size: 0.9rem;
       cursor: pointer;
       border-radius: 4px;
     }
 
-    /* Clear focus outline for keyboard navigation */
     .accessibility-bar button:focus,
-    a:focus,
-    button:focus {
+    a:focus {
       outline: 4px solid #ff9900 !important;
     }
 
     header {
       background-color: var(--primary-color);
-      color: white;
-      padding: 20px;
+      color: #ffffff;
+      padding: 24px;
       text-align: center;
     }
 
     main {
-      max-width: 900px;
+      max-width: 800px;
       margin: 20px auto;
       padding: 0 20px;
     }
@@ -92,85 +90,67 @@
 </head>
 <body>
 
-  <div class="accessibility-bar" role="region" aria-label="Accessibility Tools">
-    <button onclick="toggleContrast()" aria-label="Toggle high contrast mode">High Contrast</button>
-    <button onclick="changeFontSize(1)" aria-label="Increase text size">A+ Increase Font</button>
-    <button onclick="changeFontSize(-1)" aria-label="Decrease text size">A- Decrease Font</button>
-    <button onclick="readPage()" aria-label="Read main page text aloud">🔊 Read Page</button>
-  </div>
-
   <header role="banner">
+    <div class="accessibility-bar" role="region" aria-label="Accessibility Tools">
+      <button type="button" onclick="toggleContrast()" aria-label="Toggle High Contrast">High Contrast</button>
+      <button type="button" onclick="changeFontSize(2)" aria-label="Increase Font Size">A+ Font</button>
+      <button type="button" onclick="changeFontSize(-2)" aria-label="Decrease Font Size">A- Font</button>
+      <button type="button" onclick="readPage()" aria-label="Read Page Content Aloud">🔊 Read Page</button>
+    </div>
     <h1>VisionPlus</h1>
-    <p>Technologies and resources to promote inclusion for people with visual impairments.</p>
+    <p>Assistive technology resources for people with visual impairments.</p>
   </header>
 
   <main id="main-content" role="main">
-    
     <section aria-labelledby="sec-products">
-      <h2 id="sec-products">Assistive Products & Resources</h2>
+      <h2 id="sec-products">Assistive Tools & Technologies</h2>
 
       <article class="card">
-        <h3>1. Screen Readers (Software)</h3>
-        <p>Software that converts displayed text into speech synthesis or Braille output. They allow full navigation of computers and mobile devices.</p>
-        <p><strong>Examples:</strong> NVDA (Free/Windows), TalkBack (Android), and VoiceOver (iOS/macOS).</p>
+        <h3>1. Screen Readers</h3>
+        <p>Software that converts on-screen text into spoken speech or Braille output.</p>
       </article>
 
       <article class="card">
-        <h3>2. Refreshable Braille Displays (Hardware)</h3>
-        <p>Tactile hardware devices connected to computers or smartphones that translate text from the screen into Braille characters in real time.</p>
-      </article>
-
-      <article class="card">
-        <h3>3. Smart Glasses & Tech Canes</h3>
-        <p>Equipment fitted with ultrasonic sensors or cameras powered by AI to detect obstacles and read printed text out loud.</p>
+        <h3>2. Refreshable Braille Displays</h3>
+        <p>Tactile hardware devices that display Braille characters in real time.</p>
       </article>
     </section>
-
-    <section aria-labelledby="sec-tips">
-      <h2 id="sec-tips">Accessible Navigation Best Practices</h2>
-      <ul>
-        <li>Use the <strong>Tab</strong> key on your keyboard to navigate between interactive elements on this page.</li>
-        <li>Use the buttons in the top bar to adjust visual and audio preferences according to your needs.</li>
-      </ul>
-    </section>
-
   </main>
 
   <footer role="contentinfo">
-    <p>&copy; 2026 VisionPlus - Digital Accessibility Project hosted via GitHub Pages.</p>
+    <p>&copy; 2026 VisionPlus - Digital Accessibility Project.</p>
   </footer>
 
   <script>
-    // Toggle High Contrast Mode
+    // Contrast Toggle
     function toggleContrast() {
       document.body.classList.toggle('high-contrast');
     }
 
-    // Increase / Decrease Font Size
-    let currentScale = 16; // Base size in px
-    function changeFontSize(delta) {
-      currentScale += delta * 2;
-      if (currentScale < 12) currentScale = 12;
-      if (currentScale > 28) currentScale = 28;
-      document.documentElement.style.fontSize = currentScale + 'px';
+    // Font Resizing
+    let currentSize = 16;
+    function changeFontSize(step) {
+      currentSize = Math.min(Math.max(12, currentSize + step), 28);
+      document.documentElement.style.fontSize = currentSize + 'px';
     }
 
-    // Native Speech Reader (Web Speech API)
+    // Screen Reader / Speech Synthesis
     function readPage() {
-      if ('speechSynthesis' in window) {
-        // Cancel any previous speech
-        window.speechSynthesis.cancel();
-
-        const textToRead = document.getElementById('main-content').innerText;
-        const utterance = new SpeechSynthesisUtterance(textToRead);
-        utterance.lang = 'en-US';
-        utterance.rate = 1.0;
-
-        window.speechSynthesis.speak(utterance);
-      } else {
-        alert("Sorry, your browser does not support text-to-speech synthesis.");
+      try {
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+          const text = document.getElementById('main-content').innerText;
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.lang = 'en-US';
+          window.speechSynthesis.speak(utterance);
+        } else {
+          alert('Speech Synthesis is not supported in this browser.');
+        }
+      } catch (error) {
+        console.error('Speech error:', error);
       }
     }
   </script>
 </body>
 </html>
+
