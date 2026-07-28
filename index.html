@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VisãoMais - Portal de Tecnologia Assistiva</title>
+  <title>VisionPlus - Assistive Technology Portal</title>
   <style>
-    /* Estilos Gerais (Foco em Alto Contraste e Legibilidade) */
+    /* General Styles (Focused on High Contrast and Readability) */
     :root {
       --bg-color: #f4f4f9;
       --text-color: #1a1a1a;
@@ -14,10 +14,10 @@
       --font-scale: 1rem;
     }
 
-    /* Tema de Alto Contraste (Ativado via JS) */
+    /* High Contrast Theme (Activated via JS) */
     body.high-contrast {
       --bg-color: #000000;
-      --text-color: #ffff00; /* Amarelo no preto para máxima visibilidade */
+      --text-color: #ffff00; /* Yellow on black for maximum contrast */
       --primary-color: #00ffff;
       --card-bg: #121212;
     }
@@ -32,7 +32,7 @@
       padding: 0;
     }
 
-    /* Barra de Acessibilidade Superior */
+    /* Accessibility Top Bar */
     .accessibility-bar {
       background: #333;
       color: white;
@@ -54,6 +54,7 @@
       border-radius: 4px;
     }
 
+    /* Clear focus outline for keyboard navigation */
     .accessibility-bar button:focus,
     a:focus,
     button:focus {
@@ -91,62 +92,62 @@
 </head>
 <body>
 
-  <div class="accessibility-bar" role="region" aria-label="Ferramentas de Acessibilidade">
-    <button onclick="toggleContrast()" aria-label="Alternar para modo Alto Contraste">Alto Contraste</button>
-    <button onclick="changeFontSize(1)" aria-label="Aumentar tamanho do texto">A+ Aumentar Fonte</button>
-    <button onclick="changeFontSize(-1)" aria-label="Diminuir tamanho do texto">A- Diminuir Fonte</button>
-    <button onclick="readPage()" aria-label="Ouvir texto principal da página">🔊 Ler Página</button>
+  <div class="accessibility-bar" role="region" aria-label="Accessibility Tools">
+    <button onclick="toggleContrast()" aria-label="Toggle high contrast mode">High Contrast</button>
+    <button onclick="changeFontSize(1)" aria-label="Increase text size">A+ Increase Font</button>
+    <button onclick="changeFontSize(-1)" aria-label="Decrease text size">A- Decrease Font</button>
+    <button onclick="readPage()" aria-label="Read main page text aloud">🔊 Read Page</button>
   </div>
 
   <header role="banner">
-    <h1>VisãoMais</h1>
-    <p>Tecnologias e recursos para inclusão de pessoas com deficiência visual.</p>
+    <h1>VisionPlus</h1>
+    <p>Technologies and resources to promote inclusion for people with visual impairments.</p>
   </header>
 
   <main id="main-content" role="main">
     
-    <section aria-labelledby="sec-produtos">
-      <h2 id="sec-produtos">Produtos e Recursos Assistivos</h2>
+    <section aria-labelledby="sec-products">
+      <h2 id="sec-products">Assistive Products & Resources</h2>
 
       <article class="card">
-        <h3>1. Leitores de Tela (Software)</h3>
-        <p>Softwares que convertem texto em síntese de voz ou código Braille. Permitem a navegação completa pelo computador ou celular.</p>
-        <p><strong>Exemplos:</strong> NVDA (Gratuito/Windows), TalkBack (Android) e VoiceOver (iOS/macOS).</p>
+        <h3>1. Screen Readers (Software)</h3>
+        <p>Software that converts displayed text into speech synthesis or Braille output. They allow full navigation of computers and mobile devices.</p>
+        <p><strong>Examples:</strong> NVDA (Free/Windows), TalkBack (Android), and VoiceOver (iOS/macOS).</p>
       </article>
 
       <article class="card">
-        <h3>2. Linhas Braille Digitais (Hardware)</h3>
-        <p>Dispositivos físicos conectados a computadores ou celulares que traduzem em tempo real o texto da tela para caracteres Braille tátil.</p>
+        <h3>2. Refreshable Braille Displays (Hardware)</h3>
+        <p>Tactile hardware devices connected to computers or smartphones that translate text from the screen into Braille characters in real time.</p>
       </article>
 
       <article class="card">
-        <h3>3. Óculos Inteligentes e Bengalas Tecnológicas</h3>
-        <p>Equipamentos equipados com sensores ultrassônicos ou câmeras com inteligência artificial para identificar obstáculos e ler impressos em voz alta.</p>
+        <h3>3. Smart Glasses & Tech Canes</h3>
+        <p>Equipment fitted with ultrasonic sensors or cameras powered by AI to detect obstacles and read printed text out loud.</p>
       </article>
     </section>
 
-    <section aria-labelledby="sec-dicas">
-      <h2 id="sec-dicas">Boas Práticas de Navegação Acessível</h2>
+    <section aria-labelledby="sec-tips">
+      <h2 id="sec-tips">Accessible Navigation Best Practices</h2>
       <ul>
-        <li>Utilize a tecla <strong>Tab</strong> do seu teclado para navegar entre os elementos desta página.</li>
-        <li>Utilize os botões da barra superior para ajustar a leitura conforme sua necessidade.</li>
+        <li>Use the <strong>Tab</strong> key on your keyboard to navigate between interactive elements on this page.</li>
+        <li>Use the buttons in the top bar to adjust visual and audio preferences according to your needs.</li>
       </ul>
     </section>
 
   </main>
 
   <footer role="contentinfo">
-    <p>&copy; 2026 VisãoMais - Projeto de Acessibilidade Digital hospedado via GitHub Pages.</p>
+    <p>&copy; 2026 VisionPlus - Digital Accessibility Project hosted via GitHub Pages.</p>
   </footer>
 
   <script>
-    // Alternar Contraste
+    // Toggle High Contrast Mode
     function toggleContrast() {
       document.body.classList.toggle('high-contrast');
     }
 
-    // Aumentar / Diminuir Fonte
-    let currentScale = 16; // tamanho base em px
+    // Increase / Decrease Font Size
+    let currentScale = 16; // Base size in px
     function changeFontSize(delta) {
       currentScale += delta * 2;
       if (currentScale < 12) currentScale = 12;
@@ -154,20 +155,20 @@
       document.documentElement.style.fontSize = currentScale + 'px';
     }
 
-    // Leitor de Voz Nativo (Web Speech API)
+    // Native Speech Reader (Web Speech API)
     function readPage() {
       if ('speechSynthesis' in window) {
-        // Interrompe falas anteriores
+        // Cancel any previous speech
         window.speechSynthesis.cancel();
 
         const textToRead = document.getElementById('main-content').innerText;
         const utterance = new SpeechSynthesisUtterance(textToRead);
-        utterance.lang = 'pt-BR';
+        utterance.lang = 'en-US';
         utterance.rate = 1.0;
 
         window.speechSynthesis.speak(utterance);
       } else {
-        alert("Desculpe, seu navegador não suporta a síntese de voz.");
+        alert("Sorry, your browser does not support text-to-speech synthesis.");
       }
     }
   </script>
