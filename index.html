@@ -1,156 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VisionPlus - Accessibility Portal</title>
-  <style>
-    :root {
-      --bg-color: #f4f4f9;
-      --text-color: #1a1a1a;
-      --primary-color: #004488;
-      --card-bg: #ffffff;
-    }
-
-    /* High Contrast Mode */
-    body.high-contrast {
-      --bg-color: #000000;
-      --text-color: #ffff00;
-      --primary-color: #00ffff;
-      --card-bg: #121212;
-    }
-
-    html {
-      font-size: 16px;
-    }
-
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
-
-    .accessibility-bar {
-      background: #222222;
-      padding: 12px;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .accessibility-bar button {
-      background: #ffffff;
-      color: #000000;
-      border: 2px solid #000000;
-      padding: 8px 14px;
-      font-weight: bold;
-      font-size: 0.9rem;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    .accessibility-bar button:focus,
-    a:focus {
-      outline: 4px solid #ff9900 !important;
-    }
-
-    header {
-      background-color: var(--primary-color);
-      color: #ffffff;
-      padding: 24px;
-      text-align: center;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 0 20px;
-    }
-
-    .card {
-      background-color: var(--card-bg);
-      border: 2px solid var(--primary-color);
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      border-top: 2px solid var(--primary-color);
-    }
-  </style>
+  <title>Portal Visão Ativa - Tecnologia Assistiva e Acessibilidade</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header role="banner">
-    <div class="accessibility-bar" role="region" aria-label="Accessibility Tools">
-      <button type="button" onclick="toggleContrast()" aria-label="Toggle High Contrast">High Contrast</button>
-      <button type="button" onclick="changeFontSize(2)" aria-label="Increase Font Size">A+ Font</button>
-      <button type="button" onclick="changeFontSize(-2)" aria-label="Decrease Font Size">A- Font</button>
-      <button type="button" onclick="readPage()" aria-label="Read Page Content Aloud">🔊 Read Page</button>
+  <a href="#conteudo-principal" class="atalho-acessibilidade">Ir para o conteúdo principal</a>
+
+  <header>
+    <div class="barra-acessibilidade" role="region" aria-label="Controles de Acessibilidade">
+      <button onclick="alterarFonte(1)" aria-label="Aumentar tamanho do texto">A+</button>
+      <button onclick="alterarFonte(-1)" aria-label="Diminuir tamanho do texto">A-</button>
+      <button onclick="toggleContraste()" aria-label="Alternar modo de alto contraste">Alto Contraste</button>
     </div>
-    <h1>VisionPlus</h1>
-    <p>Assistive technology resources for people with visual impairments.</p>
+    <h1>Portal Visão Ativa</h1>
+    <p class="subtitulo">Promovendo autonomia e inclusão para pessoas com deficiência visual</p>
   </header>
 
-  <main id="main-content" role="main">
-    <section aria-labelledby="sec-products">
-      <h2 id="sec-products">Assistive Tools & Technologies</h2>
+  <main id="conteudo-principal">
 
-      <article class="card">
-        <h3>1. Screen Readers</h3>
-        <p>Software that converts on-screen text into spoken speech or Braille output.</p>
+    <section aria-labelledby="titulo-sobre">
+      <h2 id="titulo-sobre">Sobre a Plataforma</h2>
+      <p>
+        O Portal Visão Ativa reúne um conjunto de produtos, recursos, metodologias e serviços desenvolvidos para promover a independência, funcionalidade e inclusão social de pessoas com cegueira ou baixa visão.
+      </p>
+    </section>
+
+    <section aria-labelledby="titulo-produtos">
+      <h2 id="titulo-produtos">Produtos e Recursos Assistivos</h2>
+
+      <article>
+        <h3>Leitores de Tela e Softwares</h3>
+        <p>Softwares e aplicativos que convertem texto em síntese de voz ou Braille, permitindo o uso autônomo de computadores e celulares.</p>
+        <ul>
+          <li><strong>NVDA (NonVisual Desktop Access):</strong> Leitor de tela gratuito e de código aberto para Windows.</li>
+          <li><strong>TalkBack e VoiceOver:</strong> Recursos nativos de acessibilidade para sistemas Android e iOS.</li>
+          <li><strong>Orca:</strong> Leitor de tela para sistemas operacionais baseados em Linux.</li>
+        </ul>
       </article>
 
-      <article class="card">
-        <h3>2. Refreshable Braille Displays</h3>
-        <p>Tactile hardware devices that display Braille characters in real time.</p>
+      <article>
+        <h3>Dispositivos Físicos e Orientação</h3>
+        <p>Equipamentos que auxiliam na mobilidade diária e na identificação de objetos do cotidiano.</p>
+        <ul>
+          <li><strong>Bengala Longa:</strong> Ferramenta essencial para detecção de obstáculos e navegação segura.</li>
+          <li><strong>Óculos com Inteligência Artificial:</strong> Dispositivos vestíveis que realizam a leitura de textos e reconhecimento de objetos em tempo real.</li>
+          <li><strong>Etiquetadores de Voz:</strong> Dispositivos para gravação e identificação por voz de embalagens, remédios e roupas.</li>
+        </ul>
       </article>
     </section>
+
+    <section aria-labelledby="titulo-servicos">
+      <h2 id="titulo-servicos">Metodologias e Serviços</h2>
+
+      <article>
+        <h3>Orientação e Mobilidade (OM)</h3>
+        <p>Treinamentos especializados para o desenvolvimento de técnicas de locomoção autônoma e uso eficiente do bengala e cão-guia.</p>
+      </article>
+
+      <article>
+        <h3>Alfabetização e Leitura em Braille</h3>
+        <p>Oficinas e cursos para o aprendizado e aprimoramento da leitura e escrita pelo sistema Braille.</p>
+      </article>
+
+      <article>
+        <h3>Audiodescrição</h3>
+        <p>Serviços de conversão de imagens, filmes, aulas e eventos culturais em áudio descritivo para garantir acessibilidade integral.</p>
+      </article>
+    </section>
+
   </main>
 
-  <footer role="contentinfo">
-    <p>&copy; 2026 VisionPlus - Digital Accessibility Project.</p>
+  <footer>
+    <p>&copy; 2026 Portal Visão Ativa — Desenvolvido com foco em acessibilidade e inclusão digital.</p>
   </footer>
 
-  <script>
-    // Contrast Toggle
-    function toggleContrast() {
-      document.body.classList.toggle('high-contrast');
-    }
-
-    // Font Resizing
-    let currentSize = 16;
-    function changeFontSize(step) {
-      currentSize = Math.min(Math.max(12, currentSize + step), 28);
-      document.documentElement.style.fontSize = currentSize + 'px';
-    }
-
-    // Screen Reader / Speech Synthesis
-    function readPage() {
-      try {
-        if ('speechSynthesis' in window) {
-          window.speechSynthesis.cancel();
-          const text = document.getElementById('main-content').innerText;
-          const utterance = new SpeechSynthesisUtterance(text);
-          utterance.lang = 'en-US';
-          window.speechSynthesis.speak(utterance);
-        } else {
-          alert('Speech Synthesis is not supported in this browser.');
-        }
-      } catch (error) {
-        console.error('Speech error:', error);
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
-
