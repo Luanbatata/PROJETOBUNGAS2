@@ -1,1 +1,104 @@
+/* Configurações Gerais */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  color: #1a1a1a;
+  font-size: 18px; /* Tamanho base recomendado para melhor leitura */
+}
+
+/* Atalho para leitores de tela / navegação via teclado */
+.atalho-acessibilidade {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+}
+
+.atalho-acessibilidade:focus {
+  top: 0;
+}
+
+/* Foco Visível Obrigatório (WCAG) */
+a:focus, button:focus {
+  outline: 4px solid #0056b3;
+  outline-offset: 3px;
+}
+
+/* Layout */
+header, main, footer {
+  max-width: 850px;
+  margin: 0 auto 30px auto;
+}
+
+.subtitulo {
+  font-size: 1.1em;
+  color: #4a4a4a;
+}
+
+.barra-acessibilidade {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #0056b3;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #003d82;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+article {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  font-size: 0.9em;
+}
+
+/* Modo Alto Contraste (Fundo Preto com Texto Amarelo) */
+body.alto-contraste {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+}
+
+body.alto-contraste article {
+  background-color: #000000;
+  border: 2px solid #ffff00;
+}
+
+body.alto-contraste button {
+  background-color: #ffff00;
+  color: #000000;
+  border: 2px solid #ffffff;
+}
+
+body.alto-contraste a {
+  color: #00ffff;
+}
 
