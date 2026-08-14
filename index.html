@@ -11,79 +11,128 @@
   <a href="#conteudo-principal" class="link-atalho">Pular para o conteúdo principal</a>
 
   <header>
-    <h1>Lumina</h1>
-    <p>Tecnologia assistiva, recursos e inclusão para pessoas com deficiência visual.</p>
-    
-    <div class="ferramentas-acessibilidade" role="region" aria-label="Controles de acessibilidade da página">
-      <button id="botao-diminuir" title="Diminuir o tamanho do texto" aria-label="Diminuir tamanho do texto">A-</button>
-      <button id="botao-resetar" title="Restaurar tamanho padrão" aria-label="Restaurar tamanho original do texto">A</button>
-      <button id="botao-aumentar" title="Aumentar o tamanho do texto" aria-label="Aumentar tamanho do texto">A+</button>
-      <button id="botao-contraste" aria-label="Alternar modo de alto contraste">Alto Contraste</button>
+    <div class="header-container">
+      <div class="marca">
+        <h1>Lumina</h1>
+        <p>Portal de Recursos e Tecnologia Assistiva para Deficiência Visual</p>
+      </div>
+
+      <div class="ferramentas-acessibilidade" role="region" aria-label="Controles de Acessibilidade">
+        <button id="botao-diminuir" title="Diminuir texto" aria-label="Diminuir tamanho do texto">A-</button>
+        <button id="botao-resetar" title="Tamanho normal" aria-label="Restaurar tamanho padrão do texto">A</button>
+        <button id="botao-aumentar" title="Aumentar texto" aria-label="Aumentar tamanho do texto">A+</button>
+        <button id="botao-contraste" aria-label="Alternar modo de alto contraste">Alto Contraste</button>
+      </div>
     </div>
   </header>
 
   <nav aria-label="Navegação Principal">
-    <ul>
-      <li><a href="#leitores">Leitores de Tela</a></li>
-      <li><a href="#recursos">Aplicativos & Softwares</a></li>
-      <li><a href="#dicas">Atalhos de Navegação</a></li>
-    </ul>
+    <div class="nav-container">
+      <ul>
+        <li><a href="#busca-secao">Buscar</a></li>
+        <li><a href="#leitores">Leitores de Tela</a></li>
+        <li><a href="#recursos">Aplicativos</a></li>
+        <li><a href="#atalhos">Atalhos</a></li>
+        <li><a href="#duvidas">Dúvidas Frequentes</a></li>
+      </ul>
+    </div>
   </nav>
 
   <main id="conteudo-principal">
-    
+
+    <section id="busca-secao" class="secao-busca" aria-labelledby="titulo-busca">
+      <h2 id="titulo-busca">Buscar Recursos</h2>
+      <div class="campo-busca-wrapper">
+        <label for="campo-busca" class="sr-only">Digite o que procura:</label>
+        <input 
+          type="search" 
+          id="campo-busca" 
+          placeholder="Digite um aplicativo, leitor de tela ou comando..." 
+          aria-controls="grid-recursos"
+        >
+      </div>
+    </section>
+
     <section id="leitores" tabindex="0">
       <h2>Leitores de Tela Recomendados</h2>
-      <p>Softwares que convertem texto em som ou Braille, garantindo navegação autônoma:</p>
+      <p>Softwares fundamentais para navegação autônoma por voz ou suporte Braille:</p>
       
-      <ul>
-        <li>
-          <strong>NVDA (NonVisual Desktop Access):</strong> Leitor de tela gratuito e de código aberto muito utilizado em computadores com sistema Windows.
-        </li>
-        <li>
-          <strong>TalkBack / VoiceOver:</strong> Recurso nativo pré-instalado em dispositivos móveis Android e iOS, respectivamente.
-        </li>
-        <li>
-          <strong>JAWS:</strong> Um dos leitores mais avançados e completos para uso acadêmico e profissional em ambiente Windows.
-        </li>
-      </ul>
+      <div class="grid-cards">
+        <article class="card-item">
+          <h3>NVDA</h3>
+          <span class="tag">Windows</span>
+          <p>Leitor de tela gratuito e open-source amplamente utilizado no mundo todo.</p>
+        </article>
+
+        <article class="card-item">
+          <h3>TalkBack & VoiceOver</h3>
+          <span class="tag">Mobile (Android / iOS)</span>
+          <p>Recursos nativos integrados aos smartphones para leitura gestual e audível.</p>
+        </article>
+
+        <article class="card-item">
+          <h3>JAWS</h3>
+          <span class="tag">Windows</span>
+          <p>Solução corporativa e profissional de alta precisão para computadores.</p>
+        </article>
+      </div>
     </section>
 
     <section id="recursos" tabindex="0">
-      <h2>Tecnologias Assistivas e Aplicativos</h2>
+      <h2>Aplicativos e Softwares Assistivos</h2>
       
-      <article>
-        <h3>Be My Eyes</h3>
-        <p>Aplicativo gratuito que conecta pessoas cegas ou com baixa visão a voluntários e suporte de inteligência artificial via chamada de vídeo em tempo real.</p>
-      </article>
+      <div id="grid-recursos" class="grid-cards">
+        <article class="card-item">
+          <h3>Be My Eyes</h3>
+          <span class="tag">iOS / Android</span>
+          <p>Conecta pessoas cegas a voluntários visuais e suporte por IA via chamada de vídeo.</p>
+        </article>
 
-      <article>
-        <h3>Seeing AI</h3>
-        <p>Desenvolvido pela Microsoft, utiliza a câmera do celular para narrar o mundo ao redor: lê textos curtos, documentos, reconhece cédulas de dinheiro e descreve objetos e pessoas.</p>
-      </article>
-      
-      <article>
-        <h3>Lupas Eletrônicas</h3>
-        <p>Dispositivos visuais e aplicativos móveis de ampliação de imagem que auxiliam pessoas com baixa visão no dia a dia.</p>
-      </article>
+        <article class="card-item">
+          <h3>Seeing AI</h3>
+          <span class="tag">iOS / Android</span>
+          <p>Aplicativo da Microsoft que narra o ambiente, identifica moedas, textos e pessoas.</p>
+        </article>
+
+        <article class="card-item">
+          <h3>Lupas Eletrônicas</h3>
+          <span class="tag">Hardware / Software</span>
+          <p>Ferramentas de ampliação e ajuste de contraste para pessoas com baixa visão.</p>
+        </article>
+      </div>
     </section>
 
-    <section id="dicas" tabindex="0">
-      <h2>Comandos de Atalho Úteis</h2>
-      <p>Principais teclas para navegar de forma rápida com leitores de tela em sites bem estruturados:</p>
-      
-      <ul>
-        <li><kbd>Tab</kbd>: Avança para o próximo elemento interativo (links, botões, formulários).</li>
-        <li><kbd>Shift</kbd> + <kbd>Tab</kbd>: Voltar para o elemento interativo anterior.</li>
-        <li><kbd>H</kbd>: Salta direto para os próximos títulos/cabeçalhos da página.</li>
-        <li><kbd>D</kbd>: Alterna entre os principais blocos de conteúdo (marcos da página).</li>
+    <section id="atalhos" tabindex="0">
+      <h2>Comandos de Atalho Rápidos</h2>
+      <ul class="lista-atalhos">
+        <li><kbd>Tab</kbd> Avançar ao próximo elemento interativo</li>
+        <li><kbd>Shift</kbd> + <kbd>Tab</kbd> Voltar ao elemento interativo anterior</li>
+        <li><kbd>H</kbd> Navegar entre os títulos principais</li>
+        <li><kbd>D</kbd> Alternar entre os blocos de conteúdo da página</li>
       </ul>
+    </section>
+
+    <section id="duvidas" tabindex="0">
+      <h2>Dúvidas Frequentes</h2>
+      
+      <details>
+        <summary>O que é uma Tecnologia Assistiva?</summary>
+        <p>São produtos, recursos, metodologias ou serviços que promovem a funcionalidade, autonomia e inclusão de pessoas com deficiência ou mobilidade reduzida.</p>
+      </details>
+
+      <details>
+        <summary>Como ativar um leitor de tela no celular?</summary>
+        <p>No Android, acesse <em>Configurações > Acessibilidade > TalkBack</em>. No iPhone, acesse <em>Ajustes > Acessibilidade > VoiceOver</em>.</p>
+      </details>
     </section>
 
   </main>
 
   <footer>
-    <p>&copy; 2026 Portal Lumina - Hospedado gratuitamente no <strong>GitHub Pages</strong>.</p>
+    <div class="footer-container">
+      <p>&copy; 2026 Portal Lumina — Desenvolvido com foco em acessibilidade universal.</p>
+      <p><small>Hospedado no GitHub Pages</small></p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
