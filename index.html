@@ -8,24 +8,25 @@
 </head>
 <body>
 
-  <a href="#conteudo-principal" class="link-atalho">Ir para o conteúdo principal</a>
+  <a href="#conteudo-principal" class="link-atalho">Pular para o conteúdo principal</a>
 
   <header>
     <h1>Lumina</h1>
-    <p>Promovendo autonomia e inclusão para pessoas com deficiência visual.</p>
+    <p>Tecnologia assistiva, recursos e inclusão para pessoas com deficiência visual.</p>
     
-    <div class="ferramentas-acessibilidade" aria-label="Ferramentas de acessibilidade">
-      <button id="botao-aumentar" aria-label="Aumentar tamanho do texto">A+</button>
-      <button id="botao-diminuir" aria-label="Diminuir tamanho do texto">A-</button>
-      <button id="botao-contraste" aria-label="Alternar alto contraste">Alto Contraste</button>
+    <div class="ferramentas-acessibilidade" role="region" aria-label="Controles de acessibilidade da página">
+      <button id="botao-diminuir" title="Diminuir o tamanho do texto" aria-label="Diminuir tamanho do texto">A-</button>
+      <button id="botao-resetar" title="Restaurar tamanho padrão" aria-label="Restaurar tamanho original do texto">A</button>
+      <button id="botao-aumentar" title="Aumentar o tamanho do texto" aria-label="Aumentar tamanho do texto">A+</button>
+      <button id="botao-contraste" aria-label="Alternar modo de alto contraste">Alto Contraste</button>
     </div>
   </header>
 
   <nav aria-label="Navegação Principal">
     <ul>
       <li><a href="#leitores">Leitores de Tela</a></li>
-      <li><a href="#recursos">Recursos & Softwares</a></li>
-      <li><a href="#dicas">Atalhos Úteis</a></li>
+      <li><a href="#recursos">Aplicativos & Softwares</a></li>
+      <li><a href="#dicas">Atalhos de Navegação</a></li>
     </ul>
   </nav>
 
@@ -33,45 +34,56 @@
     
     <section id="leitores" tabindex="0">
       <h2>Leitores de Tela Recomendados</h2>
+      <p>Softwares que convertem texto em som ou Braille, garantindo navegação autônoma:</p>
+      
       <ul>
         <li>
-          <strong>NVDA (NonVisual Desktop Access):</strong> Leitor de tela gratuito para Windows.
+          <strong>NVDA (NonVisual Desktop Access):</strong> Leitor de tela gratuito e de código aberto muito utilizado em computadores com sistema Windows.
         </li>
         <li>
-          <strong>TalkBack / VoiceOver:</strong> Leitores nativos para celulares Android e iOS.
+          <strong>TalkBack / VoiceOver:</strong> Recurso nativo pré-instalado em dispositivos móveis Android e iOS, respectivamente.
         </li>
         <li>
-          <strong>JAWS:</strong> Leitor de tela profissional amplamente utilizado.
+          <strong>JAWS:</strong> Um dos leitores mais avançados e completos para uso acadêmico e profissional em ambiente Windows.
         </li>
       </ul>
     </section>
 
     <section id="recursos" tabindex="0">
       <h2>Tecnologias Assistivas e Aplicativos</h2>
+      
       <article>
         <h3>Be My Eyes</h3>
-        <p>Aplicativo gratuito que conecta pessoas cegas ou com baixa visão a voluntários por vídeo.</p>
+        <p>Aplicativo gratuito que conecta pessoas cegas ou com baixa visão a voluntários e suporte de inteligência artificial via chamada de vídeo em tempo real.</p>
       </article>
+
       <article>
         <h3>Seeing AI</h3>
-        <p>Aplicativo da Microsoft que narra o mundo ao seu redor, lendo textos e reconhecendo objetos.</p>
+        <p>Desenvolvido pela Microsoft, utiliza a câmera do celular para narrar o mundo ao redor: lê textos curtos, documentos, reconhece cédulas de dinheiro e descreve objetos e pessoas.</p>
+      </article>
+      
+      <article>
+        <h3>Lupas Eletrônicas</h3>
+        <p>Dispositivos visuais e aplicativos móveis de ampliação de imagem que auxiliam pessoas com baixa visão no dia a dia.</p>
       </article>
     </section>
 
     <section id="dicas" tabindex="0">
-      <h2>Comandos de Atalho Rápidos</h2>
-      <p>Dicas para navegar mais rápido com leitores de tela:</p>
+      <h2>Comandos de Atalho Úteis</h2>
+      <p>Principais teclas para navegar de forma rápida com leitores de tela em sites bem estruturados:</p>
+      
       <ul>
-        <li><kbd>Tab</kbd>: Avança para o próximo elemento interativo.</li>
-        <li><kbd>Shift</kbd> + <kbd>Tab</kbd>: Volta para o elemento anterior.</li>
-        <li><kbd>H</kbd>: Alterna entre os títulos da página.</li>
+        <li><kbd>Tab</kbd>: Avança para o próximo elemento interativo (links, botões, formulários).</li>
+        <li><kbd>Shift</kbd> + <kbd>Tab</kbd>: Voltar para o elemento interativo anterior.</li>
+        <li><kbd>H</kbd>: Salta direto para os próximos títulos/cabeçalhos da página.</li>
+        <li><kbd>D</kbd>: Alterna entre os principais blocos de conteúdo (marcos da página).</li>
       </ul>
     </section>
 
   </main>
 
   <footer>
-    <p>&copy; 2026 Projeto Acessível - Hospedado no GitHub Pages.</p>
+    <p>&copy; 2026 Portal Lumina - Hospedado gratuitamente no <strong>GitHub Pages</strong>.</p>
   </footer>
 
   <script src="script.js"></script>
