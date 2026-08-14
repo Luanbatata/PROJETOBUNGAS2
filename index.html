@@ -3,79 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Visão Ativa - Tecnologia Assistiva e Acessibilidade</title>
+  <title>Lumina - Portal de Tecnologia Assistiva Visual</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <a href="#conteudo-principal" class="atalho-acessibilidade">Ir para o conteúdo principal</a>
+  <a href="#conteudo-principal" class="link-atalho">Ir para o conteúdo principal</a>
 
   <header>
-    <div class="barra-acessibilidade" role="region" aria-label="Controles de Acessibilidade">
-      <button onclick="alterarFonte(1)" aria-label="Aumentar tamanho do texto">A+</button>
-      <button onclick="alterarFonte(-1)" aria-label="Diminuir tamanho do texto">A-</button>
-      <button onclick="toggleContraste()" aria-label="Alternar modo de alto contraste">Alto Contraste</button>
+    <h1>Lumina</h1>
+    <p>Promovendo autonomia e inclusão para pessoas com deficiência visual.</p>
+    
+    <div class="ferramentas-acessibilidade" aria-label="Ferramentas de acessibilidade">
+      <button id="botao-aumentar" aria-label="Aumentar tamanho do texto">A+</button>
+      <button id="botao-diminuir" aria-label="Diminuir tamanho do texto">A-</button>
+      <button id="botao-contraste" aria-label="Alternar alto contraste">Alto Contraste</button>
     </div>
-    <h1>Portal Visão Ativa</h1>
-    <p class="subtitulo">Promovendo autonomia e inclusão para pessoas com deficiência visual</p>
   </header>
 
+  <nav aria-label="Navegação Principal">
+    <ul>
+      <li><a href="#leitores">Leitores de Tela</a></li>
+      <li><a href="#recursos">Recursos & Softwares</a></li>
+      <li><a href="#dicas">Atalhos Úteis</a></li>
+    </ul>
+  </nav>
+
   <main id="conteudo-principal">
-
-    <section aria-labelledby="titulo-sobre">
-      <h2 id="titulo-sobre">Sobre a Plataforma</h2>
-      <p>
-        O Portal Visão Ativa reúne um conjunto de produtos, recursos, metodologias e serviços desenvolvidos para promover a independência, funcionalidade e inclusão social de pessoas com cegueira ou baixa visão.
-      </p>
+    
+    <section id="leitores" tabindex="0">
+      <h2>Leitores de Tela Recomendados</h2>
+      <ul>
+        <li>
+          <strong>NVDA (NonVisual Desktop Access):</strong> Leitor de tela gratuito para Windows.
+        </li>
+        <li>
+          <strong>TalkBack / VoiceOver:</strong> Leitores nativos para celulares Android e iOS.
+        </li>
+        <li>
+          <strong>JAWS:</strong> Leitor de tela profissional amplamente utilizado.
+        </li>
+      </ul>
     </section>
 
-    <section aria-labelledby="titulo-produtos">
-      <h2 id="titulo-produtos">Produtos e Recursos Assistivos</h2>
-
+    <section id="recursos" tabindex="0">
+      <h2>Tecnologias Assistivas e Aplicativos</h2>
       <article>
-        <h3>Leitores de Tela e Softwares</h3>
-        <p>Softwares e aplicativos que convertem texto em síntese de voz ou Braille, permitindo o uso autônomo de computadores e celulares.</p>
-        <ul>
-          <li><strong>NVDA (NonVisual Desktop Access):</strong> Leitor de tela gratuito e de código aberto para Windows.</li>
-          <li><strong>TalkBack e VoiceOver:</strong> Recursos nativos de acessibilidade para sistemas Android e iOS.</li>
-          <li><strong>Orca:</strong> Leitor de tela para sistemas operacionais baseados em Linux.</li>
-        </ul>
+        <h3>Be My Eyes</h3>
+        <p>Aplicativo gratuito que conecta pessoas cegas ou com baixa visão a voluntários por vídeo.</p>
       </article>
-
       <article>
-        <h3>Dispositivos Físicos e Orientação</h3>
-        <p>Equipamentos que auxiliam na mobilidade diária e na identificação de objetos do cotidiano.</p>
-        <ul>
-          <li><strong>Bengala Longa:</strong> Ferramenta essencial para detecção de obstáculos e navegação segura.</li>
-          <li><strong>Óculos com Inteligência Artificial:</strong> Dispositivos vestíveis que realizam a leitura de textos e reconhecimento de objetos em tempo real.</li>
-          <li><strong>Etiquetadores de Voz:</strong> Dispositivos para gravação e identificação por voz de embalagens, remédios e roupas.</li>
-        </ul>
+        <h3>Seeing AI</h3>
+        <p>Aplicativo da Microsoft que narra o mundo ao seu redor, lendo textos e reconhecendo objetos.</p>
       </article>
     </section>
 
-    <section aria-labelledby="titulo-servicos">
-      <h2 id="titulo-servicos">Metodologias e Serviços</h2>
-
-      <article>
-        <h3>Orientação e Mobilidade (OM)</h3>
-        <p>Treinamentos especializados para o desenvolvimento de técnicas de locomoção autônoma e uso eficiente do bengala e cão-guia.</p>
-      </article>
-
-      <article>
-        <h3>Alfabetização e Leitura em Braille</h3>
-        <p>Oficinas e cursos para o aprendizado e aprimoramento da leitura e escrita pelo sistema Braille.</p>
-      </article>
-
-      <article>
-        <h3>Audiodescrição</h3>
-        <p>Serviços de conversão de imagens, filmes, aulas e eventos culturais em áudio descritivo para garantir acessibilidade integral.</p>
-      </article>
+    <section id="dicas" tabindex="0">
+      <h2>Comandos de Atalho Rápidos</h2>
+      <p>Dicas para navegar mais rápido com leitores de tela:</p>
+      <ul>
+        <li><kbd>Tab</kbd>: Avança para o próximo elemento interativo.</li>
+        <li><kbd>Shift</kbd> + <kbd>Tab</kbd>: Volta para o elemento anterior.</li>
+        <li><kbd>H</kbd>: Alterna entre os títulos da página.</li>
+      </ul>
     </section>
 
   </main>
 
   <footer>
-    <p>&copy; 2026 Portal Visão Ativa — Desenvolvido com foco em acessibilidade e inclusão digital.</p>
+    <p>&copy; 2026 Projeto Acessível - Hospedado no GitHub Pages.</p>
   </footer>
 
   <script src="script.js"></script>
